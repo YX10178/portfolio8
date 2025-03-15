@@ -1,5 +1,11 @@
 ---
 title: "Portfolio 8"
 ---
+In this portfolio, I will analyze the Titanic dataset to determine which factors influenced passenger survival. This dataset provides information on the fate of passengers from the Titanic's maiden voyage, including their economic status (class), sex, age, and survival outcome. It contains 2,201 observations across four variables: Class, Sex, Age, and Survived.
 
-> The projects should be numbered consecutively (i.e., in the order in which you began them), and should include for each project a description of the goal, the product (computer program, hand graph, computer graph, etc.), the data, and some interpretation. Reports must be reproducible and of high quality in terms of writing, grammar, presentation, etc.
+```{r}
+library(ggplot2)
+data("Titanic")
+? Titanic
+```
+
