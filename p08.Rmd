@@ -1,26 +1,25 @@
 ---
 title: "Portfolio 8"
 ---
-In this portfolio, I will analyze the Titanic dataset to determine which factors influenced passenger survival. This dataset provides information on the fate of passengers from the Titanic's maiden voyage, including their economic status (class), sex, age, and survival outcome. It contains 2,201 observations across four variables: Class, Sex, Age, and Survived.
+In this portfolio, I learned the package Rayrender, which build 3D scenes using basic shapes and materials. 
 
 ```{r}
-library(ggplot2)
-data("Titanic")
-? Titanic
+install.packages("rayrender")
+library(rayrender)
 ```
 
 ```{r}
-
+# Scene setup
+scene <- generate_cornell() %>% #creates a Cornell Box scene — a classic 3D test room used in computer graphics.
+  add_object(sphere(x = 278, y = 200, z = 278, radius = 100,
+                    material = dielectric(color = "white", refraction = 1.5))) %>%
+  #Adds a glass-like sphere to the center of the scene.
+  add_object(sphere(x = 200, y = 300, z = 300, radius = 50,
+                    material = diffuse(color = "purple"))) %>%
+  #Adds a second diffuse purple sphere (matte surface, no shine) at a higher point.
+  add_object(sphere(x = 350, y = 150, z = 200, radius = 40,
+                    material = diffuse(color = "cyan")))
+render_scene(scene, samples = 500, fov = 40, clamp_value = 5)
+#This actually renders the image (i.e., simulates light rays and creates the final picture).
 ```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-
-
 
