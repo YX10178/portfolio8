@@ -4,7 +4,7 @@ title: "Portfolio 8"
 In this portfolio, I learned the package Rayrender, which build 3D scenes using basic shapes and materials. 
 
 ```{r}
-install.packages("rayrender")
+#install.packages("rayrender")
 library(rayrender)
 ```
 
@@ -22,4 +22,5 @@ scene <- generate_cornell() %>% #creates a Cornell Box scene — a classic 3D te
 render_scene(scene, samples = 500, fov = 40, clamp_value = 5)
 #This actually renders the image (i.e., simulates light rays and creates the final picture).
 ```
+
 
